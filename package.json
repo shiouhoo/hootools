@@ -4,18 +4,21 @@
   "description": "",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": "^1.80.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:vue"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "hootools.helloWorld",
-        "title": "Hello World"
+        "command": "extension.log",
+        "title": "Log"
       }
     ]
   },
@@ -28,6 +31,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
+    "@shiouhoo/eslint-config": "^1.0.8",
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
     "@types/vscode": "^1.84.0",
@@ -38,8 +42,5 @@
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
     "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "@shiouhoo/eslint-config": "^1.0.8"
   }
 }
