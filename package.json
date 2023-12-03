@@ -11,6 +11,7 @@
   ],
   "activationEvents": [
     "onLanguage:javascript",
+    "onLanguage:typescript",
     "onLanguage:vue"
   ],
   "main": "./out/extension.js",
