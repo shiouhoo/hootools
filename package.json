@@ -2,6 +2,7 @@
   "name": "hootools",
   "displayName": "hootools",
   "description": "",
+  "publisher": "hootools",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.80.0"
@@ -29,13 +30,14 @@
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts --fix",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "package": "pnpm vsce package --no-dependencies"
   },
   "devDependencies": {
     "@shiouhoo/eslint-config": "^1.0.8",
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
-    "@types/vscode": "^1.84.0",
+    "@types/vscode": "^1.80.0",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "@vscode/test-electron": "^2.3.6",

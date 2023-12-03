@@ -23,7 +23,6 @@ export const logDisposable = vscode.languages.registerCompletionItemProvider(
             completionItem.insertText = new vscode.SnippetString(`console.log(\`${word}: ${'\\${' + word + '}'}\`);`);
             completionItem.documentation = new vscode.MarkdownString(`console.log(\`${word}: \${${word}};\`)`);
             completionItem.detail = 'hootools：快捷输出';
-            completionItem.tags = [vscode.CompletionItemTag.Deprecated];
 
             const start = new vscode.Position(position.line, position.character - word.length - 2);
             const end = position;
