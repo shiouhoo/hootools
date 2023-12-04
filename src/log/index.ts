@@ -7,13 +7,16 @@ export const logDisposable = vscode.languages.registerCompletionItemProvider(
     {
         provideCompletionItems(document, position) {
             const linePrefix = document.lineAt(position).text;
+
             // 获取..前面的单词
-            const wordPattern = /[\w.]+/; // Matches words that may include dots
+            const wordPattern = /[\S.]+/; // Matches words that may include dots
             const wordRange = document.getWordRangeAtPosition(position, wordPattern);
             const word = document.getText(wordRange).slice(0, -2);
+
             if(!wordRange || !word) {
                 return undefined;
             }
+
             // 不是以..log结尾的，不触发
             if (!linePrefix.endsWith('..log') && !linePrefix.endsWith('..lo') && !linePrefix.endsWith('..l') && !linePrefix.endsWith('..')) {
                 return undefined;
