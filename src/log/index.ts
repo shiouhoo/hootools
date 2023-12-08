@@ -16,7 +16,6 @@ export const logDisposable = vscode.languages.registerCompletionItemProvider(
             if(!wordRange || !word) {
                 return undefined;
             }
-
             // 不是以..log结尾的，不触发
             if (!linePrefix.endsWith('..log') && !linePrefix.endsWith('..lo') && !linePrefix.endsWith('..l') && !linePrefix.endsWith('..')) {
                 return undefined;
