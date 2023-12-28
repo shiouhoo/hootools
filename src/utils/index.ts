@@ -14,20 +14,6 @@ export function judgeIsTrigger(linePrefix: string, word: string): boolean {
     return false;
 }
 
-export function getWord(document: vscode.TextDocument, position: vscode.Position) {
-
-    // 获取..前面的单词
-    const wordPattern = /[\S]+/; // Matches words that may include dots
-    const wordRange = document.getWordRangeAtPosition(position, wordPattern);
-    let word = document.getText(wordRange);
-    word = word.split('..')[0];
-
-    return {
-        word,
-        wordRange
-    };
-}
-
 export function getRepalceRange(position: vscode.Position, wordRange: vscode.Range) {
     const start = wordRange.start;
     const end = position;
@@ -36,6 +22,9 @@ export function getRepalceRange(position: vscode.Position, wordRange: vscode.Ran
 }
 
 export function getVueSection(document: vscode.TextDocument, position: vscode.Position): string {
+    if (document.languageId !== 'vue' || !document.fileName.endsWith('.vue')) {
+        return '';
+    }
     const text = document.getText();
     const offset = document.offsetAt(position);
 
