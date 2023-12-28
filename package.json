@@ -3,9 +3,14 @@
   "displayName": "hootools",
   "description": "",
   "publisher": "hootools",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "icon": "images/ht.png",
   "engines": {
     "vscode": "^1.80.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shiouhoo/hootools"
   },
   "categories": [
     "Other"
@@ -16,14 +21,7 @@
     "onLanguage:vue"
   ],
   "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.log",
-        "title": "Log"
-      }
-    ]
-  },
+  "contributes": {},
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
