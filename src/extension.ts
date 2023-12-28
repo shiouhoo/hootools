@@ -15,18 +15,12 @@ export function activate(context: vscode.ExtensionContext) {
                 const linePrefix = document.lineAt(position).text;
 
                 // 获取..前面的单词
-
-                // 不是以..log结尾的，不触发
-                if (!judgeIsTrigger(linePrefix, 'log')) {
-                    return [];
-                }
-                // 获取..前面的单词
                 const { word, wordRange } = getWord(document, position);
                 if(!wordRange || !word) {
                     return [];
                 }
 
-                const logCompionItems = getLogCompletionItems(document, position, word, wordRange);
+                const logCompionItems = judgeIsTrigger(linePrefix, 'log') ? getLogCompletionItems(document, position, word, wordRange) : [];
                 return [...logCompionItems];
             }
         },

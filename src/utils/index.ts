@@ -34,3 +34,25 @@ export function getRepalceRange(position: vscode.Position, wordRange: vscode.Ran
     const range = new vscode.Range(start, end);
     return range;
 }
+
+export function getVueSection(document: vscode.TextDocument, position: vscode.Position): string {
+    const text = document.getText();
+    const offset = document.offsetAt(position);
+
+    const sections = ['template', 'script', 'style'];
+    for (const section of sections) {
+        const sectionPattern = new RegExp(`<${section}\\b[^>]*>([\\s\\S]*?)<\\/${section}>`, 'gm');
+        let match;
+
+        while ((match = sectionPattern.exec(text)) !== null) {
+            const sectionStart = match.index;
+            const sectionEnd = sectionPattern.lastIndex;
+
+            if (sectionStart <= offset && offset <= sectionEnd) {
+                return section;
+            }
+        }
+    }
+
+    return '';
+}
