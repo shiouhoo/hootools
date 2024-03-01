@@ -1,0 +1,16 @@
+{
+    "输出Record(hootools)": {
+        "prefix": "Record",
+        "body": [
+            "Record<string, any$1>"
+        ],
+        "description": "输出 Record<string, any>"
+    },
+    "输出Record(2)(hootools)": {
+        "prefix": "rrecord",
+        "body": [
+            "Record<string, any$1>"
+        ],
+        "description": "输出 Record<string, any>"
+    }
+}
