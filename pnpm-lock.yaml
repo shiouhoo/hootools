@@ -1,15 +1,9 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
-dependencies:
-  '@shiouhoo/eslint-config':
-    specifier: ^1.0.8
-    version: 1.0.8
-
 devDependencies:
+  '@shiouhoo/eslint-config':
+    specifier: ^1.0.11
+    version: 1.0.11
   '@types/mocha':
     specifier: ^10.0.3
     version: 10.0.6
@@ -17,7 +11,7 @@ devDependencies:
     specifier: 18.x
     version: 18.18.12
   '@types/vscode':
-    specifier: ^1.84.0
+    specifier: ^1.80.0
     version: 1.84.2
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.9.0
@@ -68,7 +62,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       espree: 9.6.1
       globals: 13.23.0
       ignore: 5.3.0
@@ -90,7 +84,7 @@ packages:
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 2.0.1
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -145,9 +139,9 @@ packages:
     dev: true
     optional: true
 
-  /@shiouhoo/eslint-config@1.0.8:
-    resolution: {integrity: sha512-tPEPnPJrOgC6o9wD+PfxyUM0Sohy713pGcFcV9OyJSIFAI5nR3sXcjlzIAw5QM6ZGTSuDgqkrfvGOBl2FlHzeg==}
-    dev: false
+  /@shiouhoo/eslint-config@1.0.11:
+    resolution: {integrity: sha512-2/w4oGHWRjSpGA2Tcn7nPO3ourdiPFEHjZYN1XpGqJFyQzdCnFf/cFCnvhBQgyjzVNJbkL0KXe1G1sn/Ubi2nw==}
+    dev: true
 
   /@tootallnate/once@1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
@@ -193,7 +187,7 @@ packages:
       '@typescript-eslint/type-utils': 6.12.0(eslint@8.54.0)(typescript@5.3.2)
       '@typescript-eslint/utils': 6.12.0(eslint@8.54.0)(typescript@5.3.2)
       '@typescript-eslint/visitor-keys': 6.12.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       eslint: 8.54.0
       graphemer: 1.4.0
       ignore: 5.3.0
@@ -219,7 +213,7 @@ packages:
       '@typescript-eslint/types': 6.12.0
       '@typescript-eslint/typescript-estree': 6.12.0(typescript@5.3.2)
       '@typescript-eslint/visitor-keys': 6.12.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       eslint: 8.54.0
       typescript: 5.3.2
     transitivePeerDependencies:
@@ -246,7 +240,7 @@ packages:
     dependencies:
       '@typescript-eslint/typescript-estree': 6.12.0(typescript@5.3.2)
       '@typescript-eslint/utils': 6.12.0(eslint@8.54.0)(typescript@5.3.2)
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       eslint: 8.54.0
       ts-api-utils: 1.0.3(typescript@5.3.2)
       typescript: 5.3.2
@@ -270,7 +264,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.12.0
       '@typescript-eslint/visitor-keys': 6.12.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.5.4
@@ -341,7 +335,7 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -501,6 +495,18 @@ packages:
       which: 2.0.2
     dev: true
 
+  /debug@4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: true
+
   /debug@4.3.4(supports-color@8.1.1):
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -593,7 +599,7 @@ packages:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -827,7 +833,7 @@ packages:
     dependencies:
       '@tootallnate/once': 1.1.2
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -837,7 +843,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1483,3 +1489,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

@@ -1,13 +1,21 @@
 # hootools README
 
-这是扩展“hootools”的自述文件
+这是扩展“hootools”的自述文件,目前只有vue，js，ts文件可以使用
 
 ## Features
 
-- [x] 快捷打印
 
-在变量名上使用 ..log，即可快速打印
+### vue
 
-- [ ] 快捷注解
+- 在模板中使用 ..v-for，即可快速生成 v-for 代码
 
-待开发
+### 其他
+
+- 快捷打印, 在变量名上使用 ..log，即可快速打印
+
+### 代码片段
+
+| 前缀 |   描述    |
+| ---- | ---- |
+|  Record,rrcord  | 快速生成Record<string, any> | 
+

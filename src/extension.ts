@@ -7,8 +7,6 @@ import { judgeIsTrigger } from './utils';
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-    console.log(' your extension "hootools" is now active!');
-
     const disposable = vscode.languages.registerCompletionItemProvider(
         { pattern: '**' },
         {
@@ -20,12 +18,16 @@ export function activate(context: vscode.ExtensionContext) {
                 const lastNonContinuousCharIndex = linePrefix.search(/\S*$/);
                 const start = new vscode.Position(position.line, lastNonContinuousCharIndex);
                 const end = position;
-
+                /** 不包含..的连续字符串 */
                 const word = linePrefix.slice(lastNonContinuousCharIndex).split('..')[0];
                 const wordRange = new vscode.Range(start, end);
-
-                const logCompionItems = judgeIsTrigger(linePrefix, 'log') ? getLogCompletionItems(document, position, word, wordRange) : [];
-                const vforCompionItems = judgeIsTrigger(linePrefix, 'vfor') ? getVforCompletionItems(document, position, word, wordRange) : [];
+                /** 包含..的连续字符串 */
+                const fullWord = linePrefix.slice(lastNonContinuousCharIndex);
+                if(fullWord === '..') {
+                    return;
+                }
+                const logCompionItems = judgeIsTrigger(fullWord, 'log') ? getLogCompletionItems(document, position, word, wordRange) : [];
+                const vforCompionItems = judgeIsTrigger(fullWord, 'vfor') ? getVforCompletionItems(document, position, word, wordRange) : [];
                 return [...logCompionItems, ...vforCompionItems];
             }
         },
