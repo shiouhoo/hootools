@@ -3,7 +3,7 @@
   "displayName": "hootools",
   "description": "",
   "publisher": "hootools",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "icon": "images/ht.png",
   "engines": {
     "vscode": "^1.80.0"

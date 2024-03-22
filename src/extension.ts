@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { getLogCompletionItems } from './log';
 import { getVforCompletionItems } from './vue/vfor';
+import { getAnnotationCompletionItems } from './annotation';
 import { judgeIsTrigger } from './utils';
 
 // This method is called when your extension is activated
@@ -27,8 +28,9 @@ export function activate(context: vscode.ExtensionContext) {
                     return;
                 }
                 const logCompionItems = judgeIsTrigger(fullWord, 'log') ? getLogCompletionItems(document, position, word, wordRange) : [];
+                const annotationCompionItems = judgeIsTrigger(fullWord, '//') ? getAnnotationCompletionItems(document, position, word, wordRange) : [];
                 const vforCompionItems = judgeIsTrigger(fullWord, 'vfor') ? getVforCompletionItems(document, position, word, wordRange) : [];
-                return [...logCompionItems, ...vforCompionItems];
+                return [...logCompionItems, ...vforCompionItems, ...annotationCompionItems];
             }
         },
         '.' // triggered whenever a '.' is being typed

@@ -30,7 +30,7 @@ export function getVueSection(document: vscode.TextDocument, position: vscode.Po
 
     const sections = ['template', 'script', 'style'];
     for (const section of sections) {
-        const sectionPattern = new RegExp(`<${section}\\b[^>]*>([\\s\\S]*?)<\\/${section}>`, 'gm');
+        const sectionPattern = new RegExp(`<${section}\\b[^>]*>([\\s\\S]*)<\\/${section}>`, 'gm');
         let match;
 
         while ((match = sectionPattern.exec(text)) !== null) {
@@ -44,4 +44,17 @@ export function getVueSection(document: vscode.TextDocument, position: vscode.Po
     }
 
     return '';
+}
+
+export function preventTriggerOnVue(document: vscode.TextDocument, position: vscode.Position) {
+    // 检查文件类型是否为 .vue
+    if (document.languageId === 'vue' && document.fileName.endsWith('.vue')) {
+        if(getVueSection(document, position) === 'script') {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    return true;
 }
