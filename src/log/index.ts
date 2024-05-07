@@ -8,10 +8,9 @@ export const getLogCompletionItems = (document: vscode.TextDocument, position: v
     if(!preventTriggerOnVue(document, position)) {
         return [];
     }
-
     const completionItem = new vscode.CompletionItem('log(hootools)', vscode.CompletionItemKind.Snippet);
-    completionItem.insertText = new vscode.SnippetString(`console.log('${word}: ', structuredClone(${word}));`);
-    completionItem.documentation = new vscode.MarkdownString(`console.log('${word}: ', structuredClone(${word}))`);
+    completionItem.insertText = new vscode.SnippetString(`console.log('${word}: ', JSON.parse(JSON.stringify(${word})));`);
+    completionItem.documentation = new vscode.MarkdownString(`console.log('${word}: ', JSON.parse(JSON.stringify(${word})));`);
     completionItem.detail = 'hootools：快捷输出';
 
     // 覆盖原有输入

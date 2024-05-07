@@ -1,9 +1,9 @@
 {
   "name": "hootools",
   "displayName": "hootools",
-  "description": "",
+  "description": "适合vue的代码片段",
   "publisher": "hootools",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "icon": "images/ht.png",
   "engines": {
     "vscode": "^1.80.0"
@@ -34,6 +34,18 @@
       {
         "language": "vue",
         "path": "./snippets/record.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/request.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/request.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/request.json"
       }
     ]
   },

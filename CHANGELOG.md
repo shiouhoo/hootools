@@ -1,9 +1,7 @@
 # Change Log
 
-All notable changes to the "hootools" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## 0.0.6 (2024-05-07)
 
-## [Unreleased]
-
-- Initial release
+- 加入请求模板的代码片段
+- 将..log的输出改为JSON.parse(JSON.stringify)
