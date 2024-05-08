@@ -20,4 +20,5 @@
 | ---- | ---- |
 |  Record,rrcord  | 快速生成Record<string, any> | 
 |  request,requestpage,requestlist  | 快速生成请求函数 |
+| props | 生成withDefaults，defineProps|
 

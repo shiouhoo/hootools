@@ -3,7 +3,7 @@
   "displayName": "hootools",
   "description": "适合vue的代码片段",
   "publisher": "hootools",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "icon": "images/ht.png",
   "engines": {
     "vscode": "^1.80.0"
@@ -46,6 +46,18 @@
       {
         "language": "vue",
         "path": "./snippets/request.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/props.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/props.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/props.json"
       }
     ]
   },
