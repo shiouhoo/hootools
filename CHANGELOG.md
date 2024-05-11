@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.8
+
+- 修改withDefaults的代码片段关键字
+
 ## 0.0.7 (2024-05-08)
 
 - 加入withDefaults的代码片段

@@ -1,12 +1,12 @@
 {
-    "props": {
+    "defineProps": {
         "prefix": "输出withDefaults,defineProps",
         "body": [
             "const props = withDefaults(defineProps<{",
             "    $1",
-            "}>(), ({",
+            "}>(), {",
             "    $2",
-            "}));"
+            "});"
         ],
         "description": "props"
     }
