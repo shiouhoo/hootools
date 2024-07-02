@@ -3,6 +3,7 @@
 ## 0.0.8
 
 - 修改withDefaults的代码片段关键字
+- 修改log输出，移除JSON.parse(JSON.stringify)
 
 ## 0.0.7 (2024-05-08)
 
